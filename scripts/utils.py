@@ -362,16 +362,20 @@ def upload_heatmap(folder_path, filename,file_path):
         return None
 
 def upload_image(file_path):
-    with open(file_path, 'rb') as file:
-        files = {'file': file}
-        response = requests.post(upload_url, files=files)
-        print(response.text)
-        if response.status_code == 200:
-            url = 'https://i.malinkang.com'+response.json()[0].get("src")
-            return url
-        else:
-            print("File upload failed")
-            return None
+    try:
+        with open(file_path, 'rb') as file:
+            files = {'file': file}
+            response = requests.post(upload_url, files=files)
+            print(response.text)
+            if response.status_code == 200:
+                url = 'https://i.malinkang.com'+response.json()[0].get("src")
+                return url
+            else:
+                print("File upload failed")
+                return None
+    except Exception,e:
+        print e
+    return None
 
 def url_to_md5(url):
     # 创建一个md5哈希对象
