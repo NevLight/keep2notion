@@ -125,8 +125,11 @@ if __name__ == "__main__":
         #按照结束时间倒序排序
         logs = sorted(logs, key=lambda x: x['endTime'])
         for log in logs:
-            id = log.get("id")
-            if id == latest_id:
-                break
-            name = log.get("name")
-            get_run_data(id,name)
+            try:
+                id = log.get("id")
+                if id == latest_id:
+                    break
+                name = log.get("name")
+                get_run_data(id,name)
+            except Exception,e:
+                print e
