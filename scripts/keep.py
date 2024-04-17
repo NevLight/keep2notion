@@ -131,5 +131,5 @@ if __name__ == "__main__":
                     break
                 name = log.get("name")
                 get_run_data(id,name)
-            except Exception,e:
+            except Exception as e:
                 print e
