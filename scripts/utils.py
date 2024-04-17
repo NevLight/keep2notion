@@ -374,7 +374,7 @@ def upload_image(file_path):
                 print("File upload failed")
                 return None
     except Exception as e:
-        print e
+        print(e)
     return None
 
 def url_to_md5(url):
