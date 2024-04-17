@@ -132,4 +132,4 @@ if __name__ == "__main__":
                 name = log.get("name")
                 get_run_data(id,name)
             except Exception as e:
-                print e
+                print(e)
