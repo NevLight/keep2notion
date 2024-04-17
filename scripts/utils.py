@@ -373,7 +373,7 @@ def upload_image(file_path):
             else:
                 print("File upload failed")
                 return None
-    except Exception,e:
+    except Exception as e:
         print e
     return None
 
